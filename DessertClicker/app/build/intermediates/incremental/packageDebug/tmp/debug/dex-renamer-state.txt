@@ -1,0 +1,4 @@
+#Thu Nov 26 16:09:08 CET 2020
+base.0=/Users/tillchen/Projects/AndroidStudioProjects/codelab/DessertClicker/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
