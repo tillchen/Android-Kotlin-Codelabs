@@ -37,10 +37,10 @@ class GameViewModel : ViewModel() {
 
     // Countdown time
     private val _currentTime = MutableLiveData<Long>()
-    val currentTime: LiveData<Long>
+    private val currentTime: LiveData<Long>
         get() = _currentTime
 
-    val currentTimeString = Transformations.map(currentTime) { time ->
+    val currentTimeString: LiveData<String> = Transformations.map(currentTime) { time ->
         DateUtils.formatElapsedTime(time)
     }
 
@@ -58,7 +58,7 @@ class GameViewModel : ViewModel() {
         timer = object : CountDownTimer(COUNTDOWN_TIME, ONE_SECOND) {
 
             override fun onTick(millisUntilFinished: Long) {
-                _currentTime.value = millisUntilFinished/ONE_SECOND
+                _currentTime.value = millisUntilFinished / ONE_SECOND
             }
 
             override fun onFinish() {
