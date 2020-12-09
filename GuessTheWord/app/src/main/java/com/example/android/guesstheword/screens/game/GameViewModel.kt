@@ -17,7 +17,7 @@ class GameViewModel : ViewModel() {
         get() = _score
 
     private val _eventGameFinish = MutableLiveData<Boolean>()
-    val eventgameFinish: LiveData<Boolean>
+    val eventGameFinish: LiveData<Boolean>
         get() = _eventGameFinish
 
     // The list of words - the front of the list is the next word to guess
