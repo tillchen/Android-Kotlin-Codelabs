@@ -30,20 +30,21 @@ abstract class SleepDatabase : RoomDatabase() {
         private var INSTANCE: SleepDatabase? = null
 
         fun getInstance(context: Context): SleepDatabase {
+
             synchronized(this) {
                 var instance = INSTANCE
                 if (instance == null) {
                     instance = Room.databaseBuilder(
-                            context.applicationContext,
-                            SleepDatabase::class.java,
-                            "sleep_history_database")
-                            .fallbackToDestructiveMigration()
-                            .build()
+                        context.applicationContext,
+                        SleepDatabase::class.java,
+                        "sleep_history_database"
+                    )
+                        .fallbackToDestructiveMigration()
+                        .build()
                     INSTANCE = instance
                 }
                 return instance
             }
         }
-
     }
 }
